@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Камень, ножницы, бумага</h1>
+      <h1>Rock, Paper, Scissors</h1>
       <div class="app">
         <div class="choices">
           <button class="choice choice-rock" id="rock">
@@ -42,20 +42,20 @@
             />
           </button>
         </div>
-        <p class="make-choice">Сделайте свой выбор!</p>
-        <div class="results">
+        <p id="result" class="make-choice">Make your choice!</p>
+        <div class="results" id="results">
           <div class="results__player">
-            <h2>Вы</h2>
+            <h2>Player</h2>
             <p class="dash" id="player-choice">—</p>
-            <p class="score" id="player-score">Счёт: 0</p>
+            <p class="score" id="player-score">Score: 0</p>
           </div>
           <div class="results__computer">
-            <h2>Компьютер</h2>
+            <h2>Computer</h2>
             <p class="dash" id="computer-choice">—</p>
-            <p class="score" id="computer-score">Счёт: 0</p>
+            <p class="score" id="computer-score">Score: 0</p>
           </div>
         </div>
-        <button class="reset-button">Сбросить игру!!!</button>
+        <button class="reset-button" id="reset-button">Reset Game</button>
       </div>
     </div>
     <script type="module" src="src/js/main.js"></script>

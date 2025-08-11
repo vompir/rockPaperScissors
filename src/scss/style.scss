@@ -1,25 +1,6 @@
 @use 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-  font-family: 'Inter';
-  src: url('../../public/fonts/Inter_24pt-Regular.ttf') format('truetype');
-  font-weight: 400; // Regular
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('../../public/fonts/Inter_24pt-Bold.ttf') format('truetype');
-  font-weight: 700; // Bold
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('../../public/fonts/Inter_24pt-Italic.ttf') format('truetype');
-  font-weight: 400; // Regular
-  font-style: italic;
-}
 
 * {
   font-family: 'Inter', 'sans-serif';
@@ -96,7 +77,6 @@ body {
           min-width: 90px;
           font-size: 48px;
           display: flex;
-          align-items: center;
           justify-content: center;
         }
         .score {
