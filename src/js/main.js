@@ -1,5 +1,5 @@
-import '../scss/style.scss'
-import '../scss/media.scss'
+import '../scss/style.scss';
+import '../scss/media.scss';
 
 const rockChoiceElement = document.getElementById('rock');
 const scissorsChoiceElement = document.getElementById('scissors');
@@ -7,12 +7,13 @@ const paperChoiceElement = document.getElementById('paper');
 const playerChoiceElement = document.getElementById('player-choice');
 const computerChoiceElement = document.getElementById('computer-choice');
 const playerScoreElement = document.getElementById('player-score');
-const computerScoreElement = document.getElementById('computer-score')
+const computerScoreElement = document.getElementById('computer-score');
 const resultElement = document.getElementById('result');
 const h2Element = document.querySelectorAll('h2');
 const dash = document.querySelectorAll('.dash');
-const score = document.querySelectorAll('.score')
+const score = document.querySelectorAll('.score');
 const resetButton = document.getElementById('reset-button');
+const choicesElement = document.querySelector('.choices');
 
 const choices = ['Rock', 'Scissors', 'Paper'];
 let playerChoice = '';
@@ -20,12 +21,16 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getRandomChoice() {
-  const randomIndex = Math.floor(Math.random() * choices.length)
-  return choices[randomIndex]
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
 }
 
 function hasPlayerWon(player, computer) {
-  return ((player === 'Rock' && computer === 'Scissors') || (player === 'Scissors' && computer === 'Paper') || (player === 'Paper' && computer === 'Rock'))
+  return (
+    (player === 'Rock' && computer === 'Scissors') ||
+    (player === 'Scissors' && computer === 'Paper') ||
+    (player === 'Paper' && computer === 'Rock')
+  );
 }
 
 function getRoundResult(userOption) {
@@ -48,11 +53,13 @@ function getRoundResult(userOption) {
 
 function showResults() {
   if (playerScore === 3 || computerScore === 3) {
-    resultElement.innerText = `${playerScore === 3 ? "Player" : "Computer"} has won the game! Wanna play it again?`;
+    resultElement.innerText = `${playerScore === 3 ? 'Player' : 'Computer'} has won the game! Wanna play it again?`;
     playerChoiceElement.style.display = 'none';
     computerChoiceElement.style.display = 'none';
     h2Element.textContent = '';
-}}
+    choicesElement.style.display = 'none';
+  }
+}
 
 function choiceStyle(element) {
   element.style.fontSize = '24px';
@@ -60,7 +67,7 @@ function choiceStyle(element) {
   element.style.marginBottom = '14px';
 }
 
-function showPlayerChoice(choice) {
+function showPlayerChoice() {
   playerChoiceElement.innerText = playerChoice;
   choiceStyle(playerChoiceElement);
 }
@@ -74,33 +81,34 @@ rockChoiceElement.addEventListener('click', () => {
   playerChoice = 'Rock';
   showPlayerChoice(playerChoice);
   getRoundResult(playerChoice);
-})
+});
 
 scissorsChoiceElement.addEventListener('click', () => {
   playerChoice = 'Scissors';
   showPlayerChoice(playerChoice);
   getRoundResult(playerChoice);
-})
+});
 
 paperChoiceElement.addEventListener('click', () => {
   playerChoice = 'Paper';
   showPlayerChoice(playerChoice);
   getRoundResult(playerChoice);
-})
+});
 
 resetButton.addEventListener('click', () => {
   resultElement.innerText = 'Make your choice!';
   playerChoiceElement.style.display = 'flex';
   computerChoiceElement.style.display = 'flex';
-  dash.forEach(element => {
-    element.textContent = '—'
+  choicesElement.style.display = 'flex';
+  dash.forEach((element) => {
+    element.textContent = '—';
     element.style.fontSize = '48px';
     element.style.marginTop = '0px';
     element.style.marginBottom = '0px';
-  })
-  score.forEach(element => {
-    element.textContent = 'Score: 0'
-  })
+  });
+  score.forEach((element) => {
+    element.textContent = 'Score: 0';
+  });
   playerScore = 0;
   computerScore = 0;
-})
+});
