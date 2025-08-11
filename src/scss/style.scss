@@ -21,7 +21,6 @@
   font-style: italic;
 }
 
-
 * {
   font-family: 'Inter', 'sans-serif';
   box-sizing: border-box;
@@ -82,7 +81,8 @@ body {
       gap: 50px;
       justify-content: center;
       align-items: center;
-      .results__player, .results__computer {
+      .results__player,
+      .results__computer {
         display: flex;
         min-width: 150px;
         gap: 30px;
@@ -103,7 +103,6 @@ body {
           font-size: 24px;
           font-weight: bold;
         }
-
       }
     }
     .reset-button {

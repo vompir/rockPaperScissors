@@ -1,8 +1,8 @@
-import "../scss/style.scss";
+import '../scss/style.scss';
 const rockBtnElement = document.getElementById('rock');
 const scissorsBtnElement = document.getElementById('scissors');
 const paperBtnElement = document.getElementById('paper');
-const playerChoiceElement = document.getElementById('player-choice')
+const playerChoiceElement = document.getElementById('player-choice');
 
 const choices = ['rock', 'scissors', 'paper'];
 let playerChoice = '';
@@ -27,11 +27,10 @@ scissorsBtnElement.addEventListener('click', () => {
   playerChoice = 'scissors';
   choiceStyle();
   playerChoiceElement.textContent = 'Ножницы';
-})
+});
 
 paperBtnElement.addEventListener('click', () => {
   playerChoice = 'paper';
   choiceStyle();
   playerChoiceElement.textContent = 'Бумага';
-})
-
+});
